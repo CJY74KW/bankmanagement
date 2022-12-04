@@ -7,23 +7,23 @@
 #include <windows.h>
 #pragma warning(disable:4996)
 
-typedef struct bank { // °èÁÂÁ¤º¸¸¦ ÀúÀåÇÒ ±¸Á¶Ã¼ ¼±¾ğ
-	char* name[NAME_LEN]; // ¿¹±İÁÖ
-	int id;               // °èÁÂ¹øÈ£
-	int money;            // ÀÜ¾×
+typedef struct bank { // ê³„ì¢Œì •ë³´ë¥¼ ì €ì¥í•  êµ¬ì¡°ì²´ ì„ ì–¸
+	char* name[NAME_LEN]; // ì˜ˆê¸ˆì£¼
+	int id;               // ê³„ì¢Œë²ˆí˜¸
+	int money;            // ì”ì•¡
 	struct bank* next;
 }bank, BANK;
 
 
-bank* first, * last; // ³ëµåÀÇ Ã³À½°ú ³¡
-void Init_account(FILE* fp); // ³ëµåÀÇ Ã³À½°ú ³¡¿¡ ¸Ş¸ğ¸® ÇÒ´çÇÏ°í, ÆÄÀÏ¿¡¼­ ÀÔ·ÂÀ» ¹Şµµ·Ï ÇÏ´Â ÇÔ¼ö
-void Make_account(FILE* fp, FILE* yh); // °èÁÂ¸¦ »ı¼ºÇÏ´Â ÇÔ¼ö
-void Deposit(FILE* fp, FILE* yh); // ÀÔ±İ ÇÔ¼ö
-void WithDraw(FILE* fp, FILE* yh); // Ãâ±İ ÇÔ¼ö
-void WriteAccount(FILE* fp); // °èÁÂÀÇ Á¤º¸¸¦ ÀúÀåÇÏ´Â ÇÔ¼ö
-void Account_inquire(void); // °èÁÂ¸¦ Á¶È¸ÇÏ´Â ÇÔ¼ö
-void ReadAccount(int id, char* name, int money); // ÅØ½ºÆ® ÆÄÀÏ¿¡¼­ ÀÔ·ÂÀ» ¹Ş´Â ÇÔ¼ö
+bank* first, * last; // ë…¸ë“œì˜ ì²˜ìŒê³¼ ë
+void Init_account(FILE* fp); // ë…¸ë“œì˜ ì²˜ìŒê³¼ ëì— ë©”ëª¨ë¦¬ í• ë‹¹í•˜ê³ , íŒŒì¼ì—ì„œ ì…ë ¥ì„ ë°›ë„ë¡ í•˜ëŠ” í•¨ìˆ˜
+void Make_account(FILE* fp, FILE* yh); // ê³„ì¢Œë¥¼ ìƒì„±í•˜ëŠ” í•¨ìˆ˜
+void Deposit(FILE* fp, FILE* yh); // ì…ê¸ˆ í•¨ìˆ˜
+void WithDraw(FILE* fp, FILE* yh); // ì¶œê¸ˆ í•¨ìˆ˜
+void WriteAccount(FILE* fp); // ê³„ì¢Œì˜ ì •ë³´ë¥¼ ì €ì¥í•˜ëŠ” í•¨ìˆ˜
+void Account_inquire(void); // ê³„ì¢Œë¥¼ ì¡°íšŒí•˜ëŠ” í•¨ìˆ˜
+void ReadAccount(int id, char* name, int money); // í…ìŠ¤íŠ¸ íŒŒì¼ì—ì„œ ì…ë ¥ì„ ë°›ëŠ” í•¨ìˆ˜
 void makefile(char* name, int money, FILE* yh);
-void U_Account();//°èÁÂ °ü¸®ÇÏ´Â ¸Ş´º ÇÔ¼ö
-void U_money();//¿¹±İ °ü¸®ÇÏ´Â ±â´ÉÀÇ ¸Ş´º ÇÔ¼ö
-void nae_q(FILE* fp, FILE* yh);//°èÁÂ ³»¿ªÀ» È®ÀÎÇÏ´Â ÇÔ¼ö
+void U_Account();//ê³„ì¢Œ ê´€ë¦¬í•˜ëŠ” ë©”ë‰´ í•¨ìˆ˜
+void U_Money();//ì˜ˆê¸ˆ ê´€ë¦¬í•˜ëŠ” ê¸°ëŠ¥ì˜ ë©”ë‰´ í•¨ìˆ˜
+void nae_q(FILE* fp, FILE* yh);//ê³„ì¢Œ ë‚´ì—­ì„ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
