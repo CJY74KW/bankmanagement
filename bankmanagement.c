@@ -104,7 +104,6 @@ void WithDraw(FILE* fp, FILE* yh)
         }
 
     }
-    printf("없는 계좌번호입니다.\n");
     system("pause");
 }
 
